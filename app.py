@@ -35,9 +35,8 @@ def rpa_post():
     # Retrieve the name from url parameter
     data = request.json
     print(data)
-    new_data = jsonify(data)
-    print (new_data)
-    return (new_data)
+    data_type = type (data)
+    return (data)
     #return jsonify(data)
     #return rpa_api()
 
