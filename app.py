@@ -34,6 +34,7 @@ def askNero():
 def rpa_post():
     # Retrieve the name from url parameter
     data = request.form.to_dict(flat=False)
+    print(data)
     return jsonify(data)
     #return rpa_api()
 
