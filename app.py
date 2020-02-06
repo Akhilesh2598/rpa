@@ -36,6 +36,7 @@ def rpa_post():
     data = request.json
     print(data)
     new_data = jsonify(data)
+    print (new_data)
     return (new_data)
     #return jsonify(data)
     #return rpa_api()
