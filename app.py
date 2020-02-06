@@ -33,7 +33,7 @@ def askNero():
 @app.route('/rpa_post', methods=['POST'])
 def rpa_post():
     # Retrieve the name from url parameter
-    data = request.form.to_dict(flat=False)
+    data = request.json
     print(data)
     return jsonify(data)
     #return rpa_api()
