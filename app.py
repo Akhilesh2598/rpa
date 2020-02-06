@@ -41,9 +41,8 @@ def rpa_post():
     global final_data
     final_data = new_data['queryText']
     print(final_data)
-    return (final_data)
-    #return jsonify(data)
-    #return rpa_api()
+    rpa_api()
+    return final_data
 
 # check DF server connection
 @app.route('/rpa', methods=['GET'])
