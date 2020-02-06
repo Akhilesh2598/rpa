@@ -33,8 +33,9 @@ def askNero():
 @app.route('/rpa_post', methods=['POST'])
 def rpa_post():
     # Retrieve the name from url parameter
-    #query = request.args.get("query", None)
-    return rpa_api()
+    data = request.form.to_dict(flat=False)
+    return jsonify(data)
+    #return rpa_api()
 
 # check DF server connection
 @app.route('/rpa', methods=['GET'])
