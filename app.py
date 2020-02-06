@@ -8,6 +8,7 @@ import requests
 from flask_cors import CORS
 import json
 
+final_data = ""
 os.environ[
     "GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\AkhileshKumarSingh\\Documents\\DialogFlowChatBot\\uipathchatbot-igsqnq-9e0b8710dc64.json"
 
@@ -37,6 +38,7 @@ def rpa_post():
     print(data)
     new_data = data['queryResult']
     print(new_data)
+    global final_data
     final_data = new_data['queryText']
     print(final_data)
     return (final_data)
@@ -74,7 +76,7 @@ def rpa_api():
 
     queue_url = "https://platform.uipath.com/Akhilesh2/Akhilesh2/odata/Queues/UiPathODataSvc.AddQueueItem"
 
-    queue_payload = "{\r\n  \"itemData\": {\r\n    \"Name\": \"pendingTasks\",\r\n    \"Priority\": \"High\",\r\n    \"SpecificContent\": {\"Issue\": \"PaymentFailure\"},\r\n    \"DeferDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"DueDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"RiskSlaDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"Reference\": \"string\",\r\n    \"Progress\": \"string\"\r\n  }\r\n}"
+    queue_payload = "{\r\n  \"itemData\": {\r\n    \"Name\": \"pendingTasks\",\r\n    \"Priority\": \"High\",\r\n    \"SpecificContent\": {\"UserInput\": \""+final_data+"\"},\r\n    \"DeferDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"DueDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"RiskSlaDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"Reference\": \"string\",\r\n    \"Progress\": \"string\"\r\n  }\r\n}"
     queue_headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + access_token
