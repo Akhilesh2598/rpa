@@ -6,9 +6,6 @@ import pandas as pd
 import psycopg2
 import requests
 from flask_cors import CORS
-from engine import decision
-from exception.employee_not_found import EmployeeNotFound
-from exception.account_not_found import AccountNotFound
 import json
 
 os.environ[
