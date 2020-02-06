@@ -35,7 +35,9 @@ def rpa_post():
     # Retrieve the name from url parameter
     data = request.json
     print(data)
-    return jsonify(data)
+    new_data = jsonify(data)
+    return (new_data)
+    #return jsonify(data)
     #return rpa_api()
 
 # check DF server connection
