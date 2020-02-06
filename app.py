@@ -37,7 +37,9 @@ def rpa_post():
     print(data)
     data_type = type (data)
     print(data_type)
-    return (data)
+    new_data = data(queryResult)
+    print(new_data)
+    return (new_data)
     #return jsonify(data)
     #return rpa_api()
 
