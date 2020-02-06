@@ -35,11 +35,11 @@ def rpa_post():
     # Retrieve the name from url parameter
     data = request.json
     print(data)
-    data_type = type (data)
-    print(data_type)
-    new_data = data(queryResult)
+    new_data = data['queryResult']
     print(new_data)
-    return (new_data)
+    final_data = new_data['queryText']
+    print(final_data)
+    return (final_data)
     #return jsonify(data)
     #return rpa_api()
 
