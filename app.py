@@ -30,6 +30,12 @@ def askNero():
     lastname = request.args.get("lastname", None)
     return detect_intent_texts("uipathchatbot-igsqnq", "123", query, firstname, lastname, "en-US")
 
+@app.route('/rpa_post', methods=['POST'])
+def rpa_post():
+    # Retrieve the name from url parameter
+    #query = request.args.get("query", None)
+    return rpa_api()
+
 # check DF server connection
 @app.route('/rpa', methods=['GET'])
 def rpa():
