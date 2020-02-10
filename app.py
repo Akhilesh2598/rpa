@@ -75,7 +75,7 @@ def rpa_api():
 
     queue_url = "https://platform.uipath.com/Akhilesh2/Akhilesh2/odata/Queues/UiPathODataSvc.AddQueueItem"
 
-    queue_payload = "{\r\n  \"itemData\": {\r\n    \"Name\": \"pendingTasks\",\r\n    \"Priority\": \"High\",\r\n    \"SpecificContent\": {\"UserInput\": \""+final_data+"\"},\r\n    \"DeferDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"DueDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"RiskSlaDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"Reference\": \"string\",\r\n    \"Progress\": \"string\"\r\n  }\r\n}"
+    queue_payload = "{\r\n  \"itemData\": {\r\n    \"Name\": \"DialogFlowChatBotQueue\",\r\n    \"Priority\": \"High\",\r\n    \"SpecificContent\": {\"UserInput\": \""+final_data+"\"},\r\n    \"DeferDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"DueDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"RiskSlaDate\": \"2020-02-05T12:17:52.650Z\",\r\n    \"Reference\": \"string\",\r\n    \"Progress\": \"string\"\r\n  }\r\n}"
     queue_headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + access_token
